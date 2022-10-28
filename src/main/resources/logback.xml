@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <timestamp key="timestamp" datePattern="yyyyMMdd"/>
+    <timestamp key="bySecond" datePattern="dd_MM_yy HH:mm:ss"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${bySecond} %boldCyan(%thread) %boldGreen(%logger{0}) %highlight(%level) %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${application.home:-.}/logs/log_${timestamp}.log</file>
+        <encoder>
+            <pattern>${bySecond} [%level] - %message%n%xException</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

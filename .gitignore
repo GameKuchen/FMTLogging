@@ -1,0 +1,12 @@
+/curNumberFile.txt
+/.gradle/
+/.idea/
+/build/
+/gradle/
+/logs/
+/gradlew
+/gradlew.bat
+/settings.gradle
+/src/test/
+/src/main/resources/dev_config.properties
+/src/main/resources/production_config.properties
